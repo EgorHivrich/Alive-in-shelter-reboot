@@ -3,7 +3,7 @@
 
 #define SDL_MAIN_HANDLED
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 enum class ApplicationCondition {
     IsRunning, Stopped, Paused
@@ -13,10 +13,10 @@ class Application {
 public:
     ApplicationCondition getCurrentCondition(void) const;
 
-    void onUpdate(void) const;
+    void update(void) const;
 
 private:
     ApplicationCondition condition = ApplicationCondition::IsRunning;
 };
 
-#endif
+#endif // APPLICATION_HPP
